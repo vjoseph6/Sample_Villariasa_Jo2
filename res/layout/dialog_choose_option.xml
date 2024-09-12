@@ -1,0 +1,39 @@
+<!-- res/layout/dialog_choose_option.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/choose_option_background"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvLogoutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_an_option"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/semibold_poppins" />
+
+    <!-- Edit Option -->
+    <TextView
+        android:id="@+id/textViewEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit"
+        android:fontFamily="@font/regular_poppins"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <!-- Delete Option -->
+    <TextView
+        android:id="@+id/textViewDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/regular_poppins"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
