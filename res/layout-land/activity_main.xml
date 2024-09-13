@@ -1,0 +1,283 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white"
+        android:background="@android:color/darker_gray"
+        >
+
+        <!-- TextView for Previous Operation -->
+
+        <TextView
+            android:id="@+id/tvPreviousOperation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvResult"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/regular_poppins"
+            android:text=""
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/semibold_poppins"
+            android:textSize="32sp"
+            android:text="@string/result"
+            android:textColor="@color/black"
+            android:padding="10dp" />
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/gray"
+        >
+
+        <!-- Row 1: C, DEL, %, ÷ -->
+        <Button
+            android:id="@+id/btnAllClear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/all_clear"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector_delete"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintEnd_toStartOf="@id/btnDelete" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector_delete"
+            android:text="@string/delete"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintStart_toEndOf="@id/btnAllClear"
+            app:layout_constraintEnd_toStartOf="@id/btnModulo" />
+
+        <Button
+            android:id="@+id/btnModulo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector_delete"
+            app:layout_constraintHeight_percent="0.2"
+            android:text="@string/percentage"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnDelete"
+            app:layout_constraintEnd_toStartOf="@id/btnDivide" />
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector_operations"
+            android:text="@string/divide"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnModulo"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Row 2: 7, 8, 9, × -->
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/seven"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btnAllClear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn8" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/eight"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btnDelete"
+            app:layout_constraintStart_toEndOf="@id/btn7"
+            app:layout_constraintEnd_toStartOf="@id/btn9" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/nine"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btnModulo"
+            app:layout_constraintStart_toEndOf="@id/btn8"
+            app:layout_constraintEnd_toStartOf="@id/btnMultiply" />
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector_operations"
+            android:text="@string/multiply"
+            app:layout_constraintTop_toBottomOf="@id/btnDivide"
+            app:layout_constraintStart_toEndOf="@id/btn9"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Row 3: 4, 5, 6, - -->
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/four"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn5" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/five"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn8"
+            app:layout_constraintStart_toEndOf="@id/btn4"
+            app:layout_constraintEnd_toStartOf="@id/btn6" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/six"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn9"
+            app:layout_constraintStart_toEndOf="@id/btn5"
+            app:layout_constraintEnd_toStartOf="@id/btnMinus" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector_operations"
+            android:text="@string/subtract"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toBottomOf="@id/btnMultiply"
+            app:layout_constraintStart_toEndOf="@id/btn6"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Row 4: 1, 2, 3, + -->
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/one"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn2" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/two"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn5"
+            app:layout_constraintStart_toEndOf="@id/btn1"
+            app:layout_constraintEnd_toStartOf="@id/btn3" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/three"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn6"
+            app:layout_constraintStart_toEndOf="@id/btn2"
+            app:layout_constraintEnd_toStartOf="@id/btnPlus" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector_operations"
+            android:text="@string/add"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toBottomOf="@id/btnMinus"
+            app:layout_constraintStart_toEndOf="@id/btn3"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Row 5: 0, ., = -->
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/zero"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            android:background="@drawable/button_selector"
+            app:layout_constraintTop_toBottomOf="@id/btn1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.5"
+            app:layout_constraintEnd_toStartOf="@id/btnDot" />
+
+        <Button
+            android:id="@+id/btnDot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector"
+            android:text="@string/decimal_point"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toBottomOf="@id/btn2"
+            app:layout_constraintStart_toEndOf="@id/btn0"
+            app:layout_constraintEnd_toStartOf="@id/btnEquals" />
+
+        <Button
+            android:id="@+id/btnEquals"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_selector_operations"
+            android:text="@string/equals"
+            app:layout_constraintHeight_percent="0.2"
+            android:fontFamily="@font/bold_poppins"
+            app:layout_constraintTop_toBottomOf="@id/btn3"
+            app:layout_constraintStart_toEndOf="@id/btnDot"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
