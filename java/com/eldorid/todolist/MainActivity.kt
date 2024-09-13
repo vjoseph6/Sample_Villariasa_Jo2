@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ListView
 import com.eldorid.todolist.Adapter.TaskAdapter
 import com.eldorid.todolist.data.Task
+import com.eldroid.todolist.R
 
 class MainActivity : AppCompatActivity() {
 

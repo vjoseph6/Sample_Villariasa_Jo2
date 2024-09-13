@@ -15,8 +15,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import com.eldorid.todolist.R
 import com.eldorid.todolist.data.Task
+import com.eldroid.todolist.R
 
 
 class TaskAdapter(private val context: Context, private val taskList: ArrayList<Task>) : BaseAdapter() {
